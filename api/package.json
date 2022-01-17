@@ -1,0 +1,33 @@
+{
+  "name": "provider-search",
+  "version": "1.0.0",
+  "description": "A project for Obie Risk",
+  "main": "index.js",
+  "scripts": {
+    "==DEV==": "",
+    "start": "nodemon  ./src/index.js",
+    "==DB==": "",
+    "db:migrate": "npx knex --knexfile ./knexfile.js migrate:latest",
+    "db:seed": "npx knex seed:run",
+    "==BUILD==": "",
+    "build:production": "babel src --out-dir dist --source-maps inline"
+  },
+  "author": "Ammon Matthews",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.2.0",
+    "graphql-tools": "^8.2.0",
+    "knex": "^1.0.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
