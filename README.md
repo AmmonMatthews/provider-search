@@ -1,13 +1,13 @@
-# provider-search
+
 Take home challenge for obierisk.com
 
-#Front-end 
+# Front-end 
 This folder contains react application
 - Run cd front-end
 - Run npm install
 - Run npm start
 
-#Api
+# Api
 This folder contains the api that is needed to interact with the application. 
 ## Database Migrations
 I didn't have time to create the migrations and seed files so I have provided .sql file to add to local environment. 
