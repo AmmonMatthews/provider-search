@@ -42,7 +42,6 @@ module.exports = {
       console.error("find by err ---", err)
     );
 
-    console.log("result ---", result);
     return result;
   },
 };

@@ -7,7 +7,7 @@
     "==DEV==": "",
     "start": "nodemon  ./src/index.js",
     "==DB==": "",
-    "db:migrate": "npx knex --knexfile ./knexfile.js migrate:latest",
+    "db:migrate": "npx knex  migrate:latest",
     "db:seed": "npx knex seed:run",
     "==BUILD==": "",
     "build:production": "babel src --out-dir dist --source-maps inline"
