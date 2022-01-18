@@ -3,6 +3,7 @@ const {
   findBy,
   findAllProducts,
   findAllStates,
+  findProvider,
 } = require("../../db/models");
 
 module.exports = {
@@ -33,6 +34,15 @@ module.exports = {
       console.error("find all states ----", err);
     });
 
+    return result;
+  },
+
+  allProviders: async ({ product, state }, request) => {
+    let result = await findProvider(product, state).catch((err) =>
+      console.error("find by err ---", err)
+    );
+
+    console.log("result ---", result);
     return result;
   },
 };

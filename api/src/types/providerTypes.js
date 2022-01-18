@@ -16,6 +16,7 @@ module.exports = `
     allStates: [Provider!]
     providersByProductAndState(product: String!, state: String!): [Provider!]
     providers: [Provider!]
+    allProviders(product: String!, state: String!): [Provider!]
   }
  
 `;
