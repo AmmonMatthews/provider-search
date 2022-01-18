@@ -17,7 +17,7 @@ export const getAllProducts = async () => {
   let result = await fetch(
     "http://localhost:4000/graphql",
     requestOptions
-  ).catch((error) => console.log("error", error));
+  ).catch((error) => console.error("error", error));
 
   let json = result.json();
   return json;
@@ -37,7 +37,7 @@ export const getAllStates = async () => {
   let result = await fetch(
     "http://localhost:4000/graphql",
     requestOptions
-  ).catch((error) => console.log("error", error));
+  ).catch((error) => console.error("error", error));
 
   let json = result.json();
   return json;
@@ -68,7 +68,7 @@ export const getProviders = async (product, state) => {
   let result = await fetch(
     "http://localhost:4000/graphql",
     requestOptions
-  ).catch((error) => console.log("error", error));
+  ).catch((error) => console.error("error", error));
 
   let json = result.json();
   return json;
@@ -96,7 +96,7 @@ export const getProvidersByProductAndState = async (product, state) => {
   let result = await fetch(
     "http://localhost:4000/graphql",
     requestOptions
-  ).catch((error) => console.log("error", error));
+  ).catch((error) => console.error("error", error));
 
   let json = result.json();
   return json;
