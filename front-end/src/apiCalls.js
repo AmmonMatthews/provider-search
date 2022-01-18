@@ -73,3 +73,31 @@ export const getProviders = async (product, state) => {
   let json = result.json();
   return json;
 };
+
+export const getProvidersByProductAndState = async (product, state) => {
+  let graphql = JSON.stringify({
+    query: ` query  allPoviders($product: String!, $state: String!) {
+                  allProviders(product: $product , state: $state) {
+                  name
+              }
+            }`,
+    variables: {
+      product,
+      state,
+    },
+  });
+  var requestOptions = {
+    method: "POST",
+    headers: headers,
+    body: graphql,
+    redirect: "follow",
+  };
+
+  let result = await fetch(
+    "http://localhost:4000/graphql",
+    requestOptions
+  ).catch((error) => console.log("error", error));
+
+  let json = result.json();
+  return json;
+};

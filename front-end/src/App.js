@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { styled, Typography, Button } from "@mui/material";
-import { getAllStates, getAllProducts, getProviders } from "./apiCalls";
+import {
+  getAllStates,
+  getAllProducts,
+  getProviders,
+  getProvidersByProductAndState,
+} from "./apiCalls";
 import StateAutoComplete from "./StateAutoComplete";
 import ProductSelector from "./ProductSelector";
 
@@ -79,13 +84,13 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (currentProduct && currentState.abbreviation) {
-      let fetchProviders = await getProviders(
+      let fetchProviders = await getProvidersByProductAndState(
         currentProduct,
         currentState.abbreviation
       );
 
-      if (fetchProviders.data.providersByProductAndState.length) {
-        setAllProviders(fetchProviders.data.providersByProductAndState);
+      if (fetchProviders.data.allProviders.length) {
+        setAllProviders(fetchProviders.data.allProviders);
       }
     }
   };
